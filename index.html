@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HEX game</title>
+    <style>
+    	* { 
+            padding: 0; 
+            margin: 0; 
+        }
+    	
+        canvas { 
+            background: #eee; 
+            display: block; 
+            margin: 0 auto; 
+        }
+        
+        .button {
+            background-color: #91847f;
+            border: none;
+            color: #e4e4e4;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 80px;
+            height: 40px;
+            border-radius: 20px;
+        }
+        
+        .gameData {
+            background-color: #eee; 
+            display: inline-block;
+            width: 780px;
+            position: fixed; 
+            left: 50%;
+            margin: 0 -390px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <canvas id='gameArea' width='780' height='780'></canvas>
+
+    <div class="gameData" width='780'>
+        <div> Статус игры: <span data-status="plays" id="status"></span></div>
+        
+        <div style="text-align: center;">
+            <button class="button" onclick="setSize()" id="bt2">2</button>
+            <button class="button" onclick="setSize()" id="bt3">3</button>
+            <button class="button" onclick="setSize()" id="bt4">4</button>
+        </div>
+        
+        <div>
+            <select id="url-server">
+                <option id="remote" value="//68f02c80-3bed-4e10-a747-4ff774ae905a.pub.instances.scw.cloud">Remote server</option>
+                <option id="localhost" value="http://localhost:13337/">Local server</option>
+            </select>
+        </div>
+    </div>
+
+
+
+    <script src='buildHex.js'></script>
+
+</body>
+</html>
